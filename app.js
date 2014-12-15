@@ -13,7 +13,7 @@ log4js.configure({
     { type: 'console' }, //控制台輸出
     {
       type: 'file', //文件輸出
-      filename: './logs/access.log',
+      filename: __dirname + '/logs/access.log',
       maxLogSize: 20000000, // 20 MB
       backups: 10,
       category: 'normal'
