@@ -1,13 +1,18 @@
-Endpoints:
+##MongoDB IP:
 
-Docker:
+Setup mongodb ip first.
 
-    API_IP = "" 
+Using env variable called `MONGODB_IP`
 
-None-Docker:
+e.g. MONGODB_IP=192.168.0.100
 
-    API_IP = ""
+##Debug mode:
 
+Using env variable: `DEBUG=TEST`
+
+##Endpoints:
+
+    API_IP = {your_server_ip}
 
 * Get list:
 
@@ -23,4 +28,4 @@ None-Docker:
 
 * Run a long task:
 
-    `GET http://API_IP:8080/longtask/{sec}`
+    `GET http://API_IP:8080/longtask/{sec}` (sec range = 1 ~ 20)

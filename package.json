@@ -4,8 +4,7 @@
   "description": "",
   "main": "bin/server.js",
   "scripts": {
-    "docker": "DEBUG=TEST MONGODB_IP=54.169.149.116 nodemon bin/server.js",
-    "none_docker": "DEBUG=TEST MONGODB_IP=54.169.106.78 nodemon bin/server.js",
+    "start": "node bin/server.js",
     "debug": "DEBUG=TEST supervisor bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

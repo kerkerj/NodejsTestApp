@@ -7,6 +7,13 @@ var LogComplexModel = require('./LogComplexModel');
 var app = express();
 
 var dbIp = process.env.MONGODB_IP;
+
+if (dbIp === undefined) {
+  console.log("Warning! You should setup an env variable called: MONGODB_IP!");
+  console.log("Program exited!");
+  process.exit(0);
+}
+
 var dbUrl = "mongodb://" + dbIp + ":27017/GG";
 
 debug(dbUrl);
@@ -69,6 +76,9 @@ app.get('/normal', function(req, res) {
 
 app.get('/longtask/:sec', function(req, res) {
   var sec = req.params.sec;
+
+  if (sec < 0) sec = 1;
+  if (sec > 20) sec = 20;
 
   setTimeout(function() {
     res.status(200).json({ index: "long task is done." });
