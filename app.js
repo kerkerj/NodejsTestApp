@@ -3,32 +3,32 @@
 var debug = require('debug')('TEST');
 var mongoose = require('mongoose');
 var express = require('express');
-var log4js = require('log4js');
+// var log4js = require('log4js');
 var LogComplexModel = require('./LogComplexModel');
 var app = express();
 
 // Set logger
-log4js.configure({
-  appenders: [
-    { type: 'console' }, //控制台輸出
-    {
-      type: 'file', //文件輸出
-      filename: __dirname + '/logs/access.log',
-      maxLogSize: 20000000, // 20 MB
-      backups: 10,
-      category: 'normal'
-    }
-  ],
-  replaceConsole: true
-});
+// log4js.configure({
+//   appenders: [
+//     { type: 'console' }, //控制台輸出
+//     {
+//       type: 'file', //文件輸出
+//       filename: __dirname + '/logs/access.log',
+//       maxLogSize: 20000000, // 20 MB
+//       backups: 10,
+//       category: 'normal'
+//     }
+//   ],
+//   replaceConsole: true
+// });
 
-var logger = log4js.getLogger('normal');
-app.use(log4js.connectLogger(logger));
+// var logger = log4js.getLogger('normal');
+// app.use(log4js.connectLogger(logger));
 
-logger.debug("Some debug messages");
-logger.debug("Some debug messages");
-logger.debug("Some debug messages");
-logger.debug("Some debug messages");
+// logger.debug("Some debug messages");
+// logger.debug("Some debug messages");
+// logger.debug("Some debug messages");
+// logger.debug("Some debug messages");
 
 var dbIp = process.env.MONGODB_IP;
 
